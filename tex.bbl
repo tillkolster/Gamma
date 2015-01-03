@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -11,6 +11,19 @@ Theo Mayer-Kuckuk.
   (German Edition)}.
 \newblock Vieweg+Teubner Verlag, 1997.
 \newblock ISBN 3519430428.
+
+\bibitem[Schatz and Weidinger(1997)]{schatz}
+G{\"u}nter Schatz and Alois Weidinger.
+\newblock \emph{Nukleare Festk{\"o}rperphysik: kernphysikalische Messmethoden
+  und ihre Anwendungen}.
+\newblock Teubner-Studienb{\"u}cher : Physik. Teubner, 1997.
+\newblock ISBN 9783519230793.
+
+\bibitem[wikipedia(2009)]{wikipedia}
+wikipedia.
+\newblock Ionisations-wirkungsquerschnitt als funktion der photonenenergie, May
+  2009.
+\newblock URL \url{https://de.wikipedia.org/wiki/Photoelektrischer_Effekt/}.
 
 \bibitem[Kleinknecht(1984)]{kleinknecht}
 K.~Kleinknecht.

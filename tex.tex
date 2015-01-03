@@ -176,13 +176,82 @@ Weise entstehen, beispielsweise durch die sogenannte Paarvernichtung.
 
 \subsection{Photoeffekt}
 
+Ein Prozess, bei dem Materie mit hochenergetischer Strahlung wechselwirkt ist der Photoeffekt. Dabei gibt ein Photon bei einem Absorptionsprozess seine gesamte Energie 
+an ein Elektron ab \cite{schatz}. Die kinetische Energie des so emittierten Elektrons ist dann gleich der des Photons minus der Bindungsenergie aus dem Atom. Diese 
+Bindungsenergie verbleibt zunächst im Atom und kann in Form eines Auger-Elektrons oder Röntgen-Strahlung abgegeben werden. Der Wirkungsquerschnitt 
+des Photoeffekts kann folgender Näherung entnommen werden:
+
+\begin{align}
+\sigma_{Ph} &\propto E^{-3,5}_{\gamma} \cdot Z^5,
+\end{align}
+Mit $E_{\gamma}$ der Energie des einfallenden Photons und $Z$ der Kernladungszahl des einfangenden Atoms. Es empfiehlt sich also zur Abschirmung gegen hochenergetische 
+Strahlung Elemente mit hoher Kernladungszahl zu benutzen. 
+
+Mit steigender Energie des Photons nimmt jedoch der Wirkungsquerschnitt ab, erreicht die Photonenenergie jedoch die Energie, die zum ionisieren der Schale, die in 
+der Energieskala höher liegt, springt der Wirkungsquerschnitt wieder auf einen höheren Wert. Dies findet so lange statt, bis keine höherenergetischen Schalen mehr 
+existieren, wie in Abbildung \ref{fig:absorption} zu sehen ist. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.4\textwidth]{images/kante.png}
+\caption{Schematischer Darstellung des Wirkungsquerschnittes als Funktion der Photonenenergie \cite{wikipedia}}
+\label{fig:absorption}
+\end{figure}
+
+Die Sprungkanten werden als Absorptionskanten bezeichnet und sind im Absorptionsspektrum gut sichtbar. Der Photoeffekt ist also sehr wichtig bei kleineren Photonenenergien 
+und Materialien mit hoher Kernladungszahl \cite{schatz}.
+
 \subsection{Compton-Streuung}
 
-\subsection{Paarvernichtung}
+Bei der Compton-Streuung wird nicht wie beim Photoeffekt die gesamte Energie auf eine Elektron übertragen, sondern nur ein Teil. Wie viel, hängt vom Winkel des 
+Zusammenstoßes zwischen Photon und Elektron ab, es handelt sich also um einen elastischen Stoß. Das Elektron wird hierbei als frei angenommen, was bei den 
+äußeren Elektronen eines Atoms näherungsweise stimmt. Durch den Energieverlust wird die Wellenlänge des Photons um den Betrag $\Delta \lambda$ vergrößert, für 
+welche folgende Relation gilt:
+
+\begin{align}
+\Delta \lambda &= \frac{h}{m_e c} (1 - \cos \phi) = \lambda_c (1 - \cos \phi),
+\end{align}
+mit $\lambda_c$ der Compton-Wellenlänge, $m_e$ der Masse des Elektrons, $h$ dem Planckschen Wirkungsquantum, $c$ der Lichtgeschwindigkeit und $\phi$ dem Streuwinkel. 
+Der Energieverlust hängt also allein vom Streuwinkel ab. 
+
+Der Wirkungsquerschnitt ist somit allein von der Elektronendichte abhängig, welche ungefähr proportional zur Kernladungszahl ist. Somit ergibt sich für 
+den Wirkungsquerschnitt folgende Näherung: 
+
+\begin{align}
+\sigma_C &\propto E_{\gamma}^{-1} \cdot Z
+\end{align}
+
+Der Comptoneffekt stellt sich somit aks besnders wichtig heraus für mittlere Energien zwischen $100$ und $1000 \si{\kilo \electronvolt}$. 
+
+Wenn nun die gestreuten Photonen energieaufgelöst beobachtet werden, so ist die Energie des gestreuten Photons $E_{\gamma}'$ in Abhängigkeit des Winkel von Interesse:
+\begin{align}
+E_{\gamma}'(\phi) &= \frac{E_{\gamma}}{1 + \frac{E_{\gamma}}{m_e c^2} (1 - \cos \phi)}
+\end{align}
+
+Bei Aufnahme eines Spektrums ergibt sich nun also ein kontinuierliches Spektrum für alle Winkel zwischen 0\textdegree und 180\textdegree. Danach folgt eine 
+scharfe Kante, die sogenannte Compton-Kante, die auftritt, weil nicht mehr Energie abgegeben werden kann, als bei einem Stoß von 180\textdegree. Die 
+korrespondierende Energie beträgt dann also 
+\begin{align}
+E_{\gamma}'(180^{\circ}) &= \frac{E_{\gamma}}{1 + \frac{2 E_{\gamma}}{m_e c^2}}
+\end{align}
+
+Zusätzlich sollte ein Maximum mit höherer Energie im Spektrum auftreten, da auch einige Photonen ohne Streuprozess durch das Material fliegen. Dieses Maximum wird 
+Photopeak genannt. Zu jedem Photopeak gibt es also eine korrespondierende Compton-Kante. 
+
+\subsection{Paarbildung/-vernichtung}
+
+Bei höheren Photonenenergien von ab $1022 \si{\kilo \electronvolt}$ tritt als zusätzlicher Effekt die Paarbildung bzw. -vernichtung auf. Hierbei kann sich ein Photon 
+im Feld eines Atoms in Elektron und Positron aufspalten. 
+
 
 \subsection{Massenschwächungskoeffizient}
 
-\subsection{Wirkungsquerschnitt}
+\begin{figure}[h]
+\centering
+\includegraphics[width=.4\textwidth]{images/absorption.pdf}
+\caption{Beitrag der verschiedenen Komponenten zum Absorptionskoeffizienten von Germanium \cite{schatz}}
+\label{fig:absorption_2}
+\end{figure}
 
 \subsection{Szintillationsdetektor}
 

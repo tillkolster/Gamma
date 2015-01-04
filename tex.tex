@@ -139,7 +139,9 @@ Tutor: Dr. Katayoun Gharagozloo-Hubmann
 
 \subsection{Einleitung}
 
-Radiokativer Zerfall feststellen, Kernzerfall vs Röntgenstrahlung
+Radioaktive Strahlung hat verschieden Quellen, die wohl bekannteste ist der Zerfall von instabilen Atomkernen. Dabei treten verschiedene Strahlungsarten auf, 
+die aus vielfältigen Gründen gemessen und quantifiziert werden wollen. So kann eine gesundheitliche Belastung durch Strahlungsquellen von Interesse sein, die 
+Aktivität dieser zu bestimmen. Im folgenden Versuch steht die Gammastrahlung als eine der drei Strahlungsarten im Fokus.  
 
 \subsection{Kernzerfälle}
 
@@ -241,10 +243,47 @@ Photopeak genannt. Zu jedem Photopeak gibt es also eine korrespondierende Compto
 \subsection{Paarbildung/-vernichtung}
 
 Bei höheren Photonenenergien von ab $1022 \si{\kilo \electronvolt}$ tritt als zusätzlicher Effekt die Paarbildung bzw. -vernichtung auf. Hierbei kann sich ein Photon 
-im Feld eines Atoms in Elektron und Positron aufspalten. 
+im Feld eines Atomkerns oder eines Hüllenelektrons in Elektron und Positron aufspalten. 
+
+Findet diese Aufspaltung im Feld eines Atomkerns statt, so geht fast die gesamte Energie des Photons in die beiden Teilchen über, davon $E = m_e c^2 = 511 
+\si{\kilo \electronvolt}$ in die Ruhemasse jedes Teilchens und der Rest in die kinetische Energie. Elektron und Postiron fliegen dabei genau in entgegengesetzte Richtungen 
+senkrecht zur Bahn des erzeugenden Photons, sodass der Impuls beider Teilchen zusammenaddiert genau null ergibt. Da dem Photon ebenfalls ein Impuls zugeschrieben werden 
+kann, der durch die beobachtbaren Bahnen nicht an die beiden Spaltprodukte übergegangen sein kann, muss dieser an den beteiligten Atomkern übergehen und beträgt 
+$p=\nicefrac{E_{\gamma}}{c} = \nicefrac{h \nu}{c}$. 
+
+Trifft nun ein Elektron auf ein Positron, so kommt es zur Paarvernichtung, dabei werden jedoch zwei Photonen frei, die sich aufgrund der Impulserhaltung bei vorher 
+ruhenden Teilchen in genau entgegengesetzte Richtungen bewegen. 
+Wird die kinetische Energie des Elektrons und Positrons vernachlässigt, so besitzen beide Photonen eine Energie, 
+die wieder genau der Ruheenergie eines Elektrons entstpricht, $511 \si{\kilo \electronvolt}$. Diese Energie kann im Detektor gemessen werden. Es kann jedoch auch 
+vorkommen, dass ein Photon der Paarvernichtung aus dem Detektor entkommt. Dementsprechend verbleibt nur ein Teil der Energie des ursprünglichen 
+Photons im Detektor. Wenn angenommen wird, dass das Elektron/Positron seine gesamte kinetische Energie im Detektor verloren hat, beträgt die Energie des 
+sogenannten Single-Escape-Peaks $E = E_{\gamma} - 511 \si{\kilo \electronvolt}$. Entkommen das Paar, so fehlt dementsprechend doppelt so viel Energie: 
+$E = E_{\gamma} - 1022 \si{\kilo \electronvolt}$. 
+
+Paarbildung bzw. -vernichtung wird für hohe Photonenenergien zum dominierenden Effekt und ihr Wirkungsquerschnitt hat folgende Abhängigkeit \cite{harvey}:
+
+\begin{align}
+\sigma_A &\propto Z^2 \ln E_{\gamma}
+\end{align}  
 
 
 \subsection{Massenschwächungskoeffizient}
+
+Um die Stärke der Interaktion von Gammastrahlung mit Materie zu beschreiben, wird ein Exponentieller Ansatz gewählt, in die drei vorgestellten Effekte eingepasst 
+werden:
+
+\begin{align}
+I(s) &= I_0 e^{- \mu s},
+\end{align}
+wobei $I$ die Intensität in Abhängigkeit der durchquerten Strecke $s$ ist und $\mu$ der Absorptionskoeffizient. Dieser ist Abhängig von der Atomdichte des Absorbers $n$ 
+in Anzahl pro Volumen und dem totalen Wirkungsquerschnitt \cite{marmier}:
+
+\begin{align}
+\mu &= n \cdot \sigma_{tot} = n \cdot ( \sigma_{Ph} + \sigma_C + \sigma_A)
+\end{align}
+
+Aufgrund der verschiedenen $Z$- und $E_{\gamma}$-Abhängigkeiten, bietet sich die in Abbildung \ref{fig:absorption_2} gezeigte Abhähngigkeit des Absorptionskoeffizienten 
+von der Photonenenergie.
 
 \begin{figure}[h]
 \centering
@@ -252,6 +291,8 @@ im Feld eines Atoms in Elektron und Positron aufspalten.
 \caption{Beitrag der verschiedenen Komponenten zum Absorptionskoeffizienten von Germanium \cite{schatz}}
 \label{fig:absorption_2}
 \end{figure}
+
+
 
 \subsection{Szintillationsdetektor}
 

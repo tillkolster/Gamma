@@ -1,4 +1,4 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{9}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -24,6 +24,17 @@ wikipedia.
 \newblock Ionisations-wirkungsquerschnitt als funktion der photonenenergie, May
   2009.
 \newblock URL \url{https://de.wikipedia.org/wiki/Photoelektrischer_Effekt/}.
+
+\bibitem[Harvey and Kolb(1966)]{harvey}
+B.G. Harvey and M.~Kolb.
+\newblock \emph{Kernphysik und Kernchemie (Introduction to nuclear physics and
+  chemistry, dt.) Eine Einf}.
+\newblock 1966.
+
+\bibitem[Marmier et~al.(1960)Marmier, Sheldon, and Szostak]{marmier}
+P.~Marmier, E.~Sheldon, and R.~Szostak.
+\newblock \emph{Kernphysik, 1. Vorlesungen von P. Marmier}.
+\newblock Z{\"u}rich, 1960.
 
 \bibitem[Kleinknecht(1984)]{kleinknecht}
 K.~Kleinknecht.

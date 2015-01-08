@@ -13,7 +13,7 @@
 \usepackage[scaled=0.78]{beramono} %Schreibmaschinenschrift
 \usepackage{microtype}
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel} % internationale Sprachunterstützung
+\usepackage[ngerman]{babel} % internationale Sprachunterstützung
 
 
 
@@ -31,7 +31,7 @@
 \usepackage{units}
 \usepackage{icomma} %keine Leerzeichen nach Komma im mathmode
 \usepackage[numbers,sort]{natbib}
-\usepackage{babelbib} %deutsche bibliographie
+\usepackage{babelbib}%deutsche bibliographie
 \usepackage{multirow}
 \usepackage{rotating}
 \usepackage{url}
@@ -329,19 +329,320 @@ verlaufen, sondern durch die Beträge der möglichen Übergänge aus den Elektro
 
 \section{Durchführung}
 
-\subsection{Versuchsaufbau}
 
-\begin{figure*}[h]
-\centering
-\includegraphics[width=.8\textwidth]{images/aufbau.pdf}
-\caption{Schematischer Aufbau des Versuchs \cite{wiki} mit NaJ-Detektor, VV-Vorverstärker, HV-Hauptverstärker, VKA-Vielkanalanalysator}
-\label{fig:aufbau}
-\end{figure*}
+Zuerst wurde mithilfe der der Cs-137-Pronbe die Anstiegs und Abfallzeiten am Oszilloskop mit und ohne Hauptverstärker beoachtet. 
+Dazu wurde ein geeigneter Bereich ausgewählt und mithilfe der Curser-Funktion die Zeiten bestimmt. 
 
-\subsection{Ablauf}
+Für die Kalibrierung des Vielkanalanalysators bzw. des Szintillationsdetektors wurde das Element mit dem energiereichsten 
+$\gamma$-Peak ausgewählt, um eine möglichst gute Anpassung des aufgenommenen Bereichs zu erreichen. 
+Dazu wurde die Cobalt-60-Probe ausgewählt. Die Verstärkung wurde dabei so angepasst, dass der Peak der stärksten Energie noch 
+komplett im Spektrum zu sehen ist. Außerdem wurde der Abstand der Probe zum Detektor so eingestellt, dass das Programm eine möglichst 
+kleine Dead-Rate anzeigte. Diese gibt Auskunft darüber, wie viele Einfälle nicht gezählt wurden, aufgrund des zeitlichen 
+Auflösungsvermögens des Detektors. Diese Optimierung des Abstandes wurde auch bei allen folgenden Versuchen durchgeführt. 
+Im folgenden wurde bei gleicher Kalibration jeweils eine Messung von 120 s Dauer mit den Proben 
+Co-60, Cs137 und Na-22 bei gleicher Kalibration durchgeführt und die Position sowie die Intensität der Eichungspeaks bestimmt. 
+
+Im folgenden wurde eine stärkere Co-60 Probe gewählt und in einen als Kollimator fungierende Blei-Röhre eingebracht. Vor den Detektor 
+wurden nun ca 3 mm dicke Platten aus Blei, Kupfer und Aluminium gebracht und Messungen mit verschiedenen Plattenanzahlen bzw Schichticken 
+durchgeführt, um den Massenschwächungskoeffizienten der verschiedenen Materialien bestimmen zu können. Dabei wurde die Messzeit so 
+eingestellt, dass selbst bei stärkster Abschirmung noch ein deutlicher Peak zu sehen war. Aufgenommen wurden je die Intensität der 
+Peaks als Funktion der Schichtdicke. Dabei wurde vorallem darauf geachtet, dass die Platten möglichst senkrecht zum Strahlengang stehen 
+und somit die Schichtdicke immer vergleichbar ist. Es wurde immer zuerst mit maximaler Materialstärke gemessen und dann Platten 
+abgenommen, da so die Platten besser stehen und der Effekt bei größerer Plattenstärke größer ist. 
+
+Im Anschluss wurde der Germanium-Detektor in Betrieb genommen. Mit diesem wurde wiederum eine Kalibration vorgenommen, dieses mal allerdings wurde neben den 
+vorher benutzten Elementen ebenfalls Americium und Barium hinzugenommen, um eine Kalibration genauer durchführen zu können. Im Anschluss wurde 
+noch das Absorptionsverhalten von Tellur, Zink, Iod und Antimon in der Nähe einer Absorptionskante untersucht. 
+
+%\subsection{Versuchsaufbau}
+%
+%\begin{figure*}[h]
+%\centering
+%\includegraphics[width=.8\textwidth]{images/aufbau.pdf}
+%\caption{Schematischer Aufbau des Versuchs \cite{wiki} mit NaJ-Detektor, VV-Vorverstärker, HV-Hauptverstärker, VKA-Vielkanalanalysator}
+%\label{fig:aufbau}
+%\end{figure*}
+
 
 \section{Auswertung}
 
+\subsection{Impulsformen}
+
+Zu Beginn wurden die Impulsformen und -zeiten bestinmmt, um einen Eindruck über die Größenordnung der Totzeiten zu bekommen. Dazu wurde das Signal vor und nach 
+Durchgang durch den Hauptverstärker mit dem Oszilloskop beobachtet. Die hierbei bestimmten Zeiten finden sich in Tabelle \ref{tab:zeiten}. 
+
+\begin{table}
+\centering
+\begin{tabular}{ccc}
+Detektor & Anstiegszeit & Abfallzeit \\
+\hline
+NaI VV & $700 \si{\nano \second}$ & $50 \si{\micro \second}$ \\
+NaI HV & $700 \si{\nano \second}$ & $5 \si{\micro \second}$ \\
+Ge  VV & $150 \si{\nano \second}$ & $300 \si{\micro \second}$\\
+Ge  HV & $200 \si{\nano \second}$ & $6 \si{\micro \second}$ 
+\end{tabular}
+\caption{Anstiegs- und Abfallzeiten der benutztten Detektoren vor und nach dem Hauptverstärker}
+\label{tab:zeiten}
+\end{table}
+
+Die Zeiten sind jedoch nur als ungefähre Werte zu sehen, da sich über das Oszilloskop nur schwer eine Zeit bestimmen lässt. Besonders die Abfallzeit ist nur 
+eine grobe Schätzung. Es wird jedoch sofort deutlich, dass der Hauptverstärker die Abfall- und damit Totzeiten des Detektors signifikant verringert, 
+im Fall des Szintillationsdetektors um ca. eine Größenordnung, im Fall von Germanium sogar um zwei. 
+
+Die Anstiegszeiten sind im Fall des Halbleiter-Detektors deutlich kürzer, was zusammen mit der deutlich höheren Sensitivität eine viel bessere Auflösung zulässt. 
+Dies ist auch in den folgenden Spektren zu sehen. 
+
+Die Impulsformen wurden ebenfalls beobachtet und glichen bei beiden Detektoren in etwa denen in Abbildung \ref{fig:zeiten}. Es wurden Fotos der Impulsformen 
+gemacht, allerdings sind bei diesen das Signals so schlecht zu sehen, dass nur die Skizze abgebildet ist.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+	\begin{axis}[
+	width=.48\textwidth,
+	ymin = -1.5,
+	ymax = 1.5,
+	xmin = 0,
+	xmax = 10,
+	xlabel={Zeit /a.u.},
+	ylabel={Signal /a.u},
+	]
+	%\addplot[color = red] table {data/absorption_analytisch.txt};
+	\draw [color=black, line width=.01pt ] ({axis cs:1.2,0}|-{rel axis cs:0,0}) -- ({axis cs:1.2,0}|-{rel axis cs:0,1});
+	%\draw [color=black, line width=.01pt ] ({axis cs:556.942,0}|-{rel axis cs:0,0}) -- ({axis cs:556.942,0}|-{rel axis cs:0,1});
+	\addplot[domain=0:5.5, color=blue]{sin((x)r)*e^(-.3*x)};
+	\addplot[domain=5.5:10, color=blue]{-0.06*e^(-(x-6.3))};
+	\addplot[domain=0:1.3, color=red]{-sin(((x+0.5))r)};
+	\addplot[domain=1.3:10, color=red]{-1.06*e^(-0.3*(x-1))};
+	\end{axis}
+\end{tikzpicture}
+\caption{Skizze der Impulsverläufe mit (blau) und ohne (rot) Hauptverstärker, die schwarze Linie markiert den ungefähren Übergang von Anstiegs- zu Abfallzeit}
+\label{fig:zeiten}
+\end{figure}
+
+Aus dem Verlauf des Impulses ist zu schließen, dass der Hauptdetektor eine schwächere Dämpfung des Schwingungsprozesses den der Detektor durchläuft 
+herbeiführt. Dadurch wird die Dämpfungskonstante des Prozesses verändert, was dazu führt, dass die Schwingung nun genau im aperiodischen Grenzfall 
+abläuft. So wird die Zeit minimiert, bis der Schwinger oder Oszillator, in diesem Fall der Detektor, wieder zur Ruhe kommt. Dies minimiert die 
+Totzeit und so können Ereignisse die dichter aufeinander folgen gemessen werden.
+
+\subsection{Kalibrierung des NaI-Detektors}
+
+Um den Szintillationsdetektor zu kalibrieren bzw. zu wissen welcher Kanal des Vielkanalanalysators welcher Energie entspricht, wurden bei gleicher 
+Einstellung des Hauptverstärkers Zerfälle verschiedener Energien gemessen. Die Messwerte sind in Tabelle \ref{tab:kalib_NaI} aufgeführt. 
+
+\begin{table*}[t]
+ \begin{tabular}{cccccccc}
+Element & Energie & Channel & Fehler & FWHM (PC) & FWHM (Mensch) & Net Area \\
+\hline
+Cobalt 60  & 1173,208 & 5895 & 42 & 30,36 & 330 & 21353 $\pm$ 1520 \\
+Cobalt 60  & 1332,466 & 6705 & 21 & 147,24 & 300 & 14570 $\pm$ 1217 \\
+Cäsium 137 &  661,638 & 3388 & 14 & 202,43 & 250 & 25487 $\pm$ 582 \\
+Natrium 22 & 1274,511 & 6396 & 35 & 6,06 & 400 & 16739 $\pm$ 718 \\
+ \end{tabular}
+\caption{Messwerte zur Kalibrierung des Vielkanalanalysators für den NaI-Detektor, Messzeit je 120 $\si{\second}$}
+\label{tab:kalib_NaI}
+\end{table*}
+
+In Abbildung \ref{fig:kalib_NaI} sind alle für die Kalibrierung aufgenommen Daten zu sehen. Mithilfe von \cite{kohlrausch} konnten den Peaks die in Tabelle 
+\ref{tab:kalib_NaI} ersichtlichen Energien zugeordnet werden. 
+
+%\begin{figure*}[t]
+%\centering
+%\begin{tikzpicture}
+%	\begin{axis}[
+%	width=.8\textwidth,
+%	height=.4\textwidth,
+%	ymin = 0,
+%	ymax = 450,
+%	xmin = 0,
+%	xmax = 8200,
+%	xlabel={Kanal $\#$},
+%	ylabel={Anzahl Ereignisse},
+%	]
+%	\addplot[color = red, thin] table {data/Kal_NaI_Co.txt};
+%	\addplot[color = green, thin] table {data/Kal_NaI_Na.txt};
+%	\addplot[color = blue, thin] table {data/Kal_NaI_Cs.txt};
+%	\draw [color=black, line width=.01pt ] ({axis cs:5895,0}|-{rel axis cs:0,0}) -- ({axis cs:5895,0}|-{rel axis cs:0,1});
+%	\draw [color=black, line width=.01pt ] ({axis cs:6705,0}|-{rel axis cs:0,0}) -- ({axis cs:6705,0}|-{rel axis cs:0,1});
+%	\draw [color=black, line width=.01pt ] ({axis cs:3388,0}|-{rel axis cs:0,0}) -- ({axis cs:3388,0}|-{rel axis cs:0,1});
+%	\draw [color=black, line width=.01pt ] ({axis cs:6396,0}|-{rel axis cs:0,0}) -- ({axis cs:6396,0}|-{rel axis cs:0,1});
+%	\end{axis}
+%\end{tikzpicture}
+%\caption{Anzahl der Einfälle in Abhängigkeit vom Kanal für Cobal(rot), Cäsium(blau) und Natrium (grün) zur Kalibrierung des Analysators. Die schwarzen Linien 
+%geben die Positionen der mit dem Messprogramm gefundenen und mit \cite{kohlrausch} identifizierten Peaks an}
+%\label{fig:kalib_NaI}
+%\end{figure*}
+
+Mithilfe einer linearen Regression konnte eine Kalibrationsgerade gefunden werden.Für diese Kalibrierung wurde das Programm Mathematica 10 benutzt. 
+So wurde die folgenden Kalibrationsgerade gefunden:
+\begin{align}
+(-24,9 \pm 3,4) + (0,2027 \pm 0,0007) \cdot x
+\label{eq:kalib_NaI}
+\end{align}
+
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+		width=.45\textwidth,
+		ymin= 0,
+		ymax= 1400,
+		xmin = 0,
+		xmax = 8000,
+		xlabel={Kanal $\#$},
+		ylabel={Enenergie/$\si{\kilo \electronvolt}$},
+		]
+\addplot[
+   only marks, 
+   error bars/.cd,
+   x dir=both,
+   x explicit,
+   ]
+table [ x index = {0},y index = {1}, x error index = {2} ] {data/Kal_NaI.txt};
+\addplot[domain=0:8000] {-24.93 + 0.2027 * x}; 
+\end{axis}
+\end{tikzpicture}
+\end{center} 
+\caption{Kalibrationsgerade für den NaI-Szintillationsdetektor, Werte aus Tabelle \ref{tab:kalib_NaI}, Gerade mit Parametern aus Gleichung \ref{eq:kalib_NaI}}
+\label{fig:Kalibrationsgerade_NaI}
+\end{figure}
+
+Hier fehlt noch Tabelle der Energien und Zuordnung und so was sie gesagt hat!
+
+Die selbe Kalibrierung wurde für den Germanium-Detektor durchgeführt. Allerdings konnten hier aufgrund der höheren Sensitivität mehr Elemente zur Eichung benutzt 
+werden. In Tabelle \ref{tab:Kalib_Ge} sind alle Energien und Kanäle aufgeführt, die Referenzwerte wieder aus \cite{kohlrausch}. Da für die Cobalt-Probe nur eine 
+Langzeitmessung durchgeführt wurde, wird auf eine Darstellung aller Spektren in einer Abbildung verzichtet. 
+
+\begin{table*}[t]
+ \begin{tabular}{cccccccc}
+Element & Energie & Channel & Fehler & FWHM (PC) & FWHM (Mensch) & Net Area \\
+\hline
+Cobalt 60    & 1173,208 & 6377 & 7 & 13,40 & 28 & 62965 $\pm$ 486 \\
+Cobalt 60    & 1332,466 & 7241 & 7 & 14,25 & 28 & 54430 $\pm$ 277 \\
+Cäsium 137   &  661,638 & 3599 & 7 & 10,10 & 14 &  3189 $\pm$  61 \\
+Natrium 22   & 1274,511 & 6925 & 7 & 11,44 & 14 &  2593 $\pm$  65 \\
+Amercium 241 &   59,537 &  323 & 7 &  7,38 & 14 & 90468 $\pm$ 382 \\
+Amercium 241 &   26,345 &   97 & 7 &  8,98 & 14 & 26518 $\pm$ 256 \\
+Barium 133   &   80,998 &  439 & 7 &  7,54 & 14 &  7979 $\pm$ 196
+\end{tabular}
+\caption{Messwerte zur Kalibrierung des Vielkanalanalysators für den Germaniumdetektor, Messzeit je 180 $\si{\second}$}
+\label{tab:Kalib_Ge}
+\end{table*}
+
+Wieder wurde mit einer linearen Regression eine Kalibrationsgerade gefunden werden. Ebenfalls wurde das Programm Mathematica 10 benutzt. 
+Die Parameter lauten wie folgend:
+\begin{align}
+(3,2 \pm 2,3) + (0,1839 \pm 0,0005) \cdot x
+\label{eq:kalib_Ge}
+\end{align}
+
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+		width=.45\textwidth,
+		ymin= 0,
+		ymax= 1400,
+		xmin = 0,
+		xmax = 8000,
+		xlabel={Kanal $\#$},
+		ylabel={Enenergie/$\si{\kilo \electronvolt}$},
+		]
+\addplot[
+   only marks, 
+   error bars/.cd,
+   x dir=both,
+   x explicit,
+   ]
+table [ x index = {0},y index = {1}, x error index = {2} ] {data/Kal_Ge.txt};
+\addplot[domain=0:8000] {3.2 + 0.1839 * x}; 
+\end{axis}
+\end{tikzpicture}
+\end{center} 
+\caption{Kalibrationsgerade für den Halbleiterdetektor, Werte aus Tabelle \ref{tab:Kalib_Ge}, Gerade mit Parametern aus Gleichung \ref{eq:kalib_Ge}}
+\label{fig:Kalibrationsgerade_Ge}
+\end{figure}
+
+Hier fehlt noch Tabelle der Energien und Zuordnung und so was sie gesagt hat!
+
+\subsection{Bestimmung des Massenabschwächungskoeffizienten}
+
+Für die Cobalt 60 1332,466 kEV Linie. Zeit: 180 s
+
+
+
+\begin{table}[b]
+\centering
+\begin{tabular}{cc}
+ Dicke & Zählrate  \\
+ \hline 
+ 16,50 $\pm$ 0,06 mm & 27696 $\pm$ 1484  \\
+ 13,50 $\pm$ 0,05 mm & 33269 $\pm$ 1636  \\
+ 10,50 $\pm$ 0,04 mm & 38582 $\pm$ 1826  \\
+  8,00 $\pm$ 0,03 mm & 43599 $\pm$ 1990  \\
+  6,00 $\pm$ 0,02 mm & 50994 $\pm$ 2050  \\
+\end{tabular}
+\caption{Absorption Blei}
+\label{tab:abs_blei}
+\end{table}
+
+\begin{table}[b]
+\centering
+\begin{tabular}{cc}
+ Dicke & Zählrate \\
+ \hline 
+ 21,00 $\pm$ 0,07 mm & 50276 $\pm$ 2177  \\
+ 18,00 $\pm$ 0,06 mm & 58059 $\pm$ 2091  \\
+ 15,00 $\pm$ 0,05 mm & 55323 $\pm$ 2255  \\
+ 12,00 $\pm$ 0,04 mm & 62792 $\pm$ 2185  \\
+  9,00 $\pm$ 0,03 mm & 60228 $\pm$ 2357  \\
+  6,00 $\pm$ 0,02 mm & 67514 $\pm$ 2283  \\
+\end{tabular}
+\caption{Absortion Alu}
+\label{tab:abs_alu}
+\end{table}
+
+\begin{table}[b]
+\centering
+\begin{tabular}{cc}
+ Dicke & Zählrate \\
+ \hline
+ 22,00 $\pm$ 0,08 mm & 25753 $\pm$ 1583  \\
+ 20,00 $\pm$ 0,07 mm & 28991 $\pm$ 1620  \\
+ 17,50 $\pm$ 0,06 mm & 35525 $\pm$ 1611  \\
+ 15,00 $\pm$ 0,05 mm & 35221 $\pm$ 1851  \\
+ 12,00 $\pm$ 0,04 mm & 42395 $\pm$ 1890  \\
+  9,00 $\pm$ 0,03 mm & 49374 $\pm$ 1995  \\
+\end{tabular}
+\caption{Absorption Kupfer}
+\label{tab:abs_kupfer}
+\end{table}
+
+\subsection{Analyse eines Spektrums}
+
+Zeit: 4000 $\si{\second}$
+
+\subsection{Bestimmung der Konversionslinie}
+
+Zeit: 180 s.
+
+\begin{table*}[b]
+\begin{tabular}{ccccccc}
+ Element & 30-keV-Linie & FWHM & Net Area & 80-keV-Linie & FWHM & Net Area \\
+ \hline
+ Barium 133 pur & 1743 & 60,44 & 11170 $\pm$ 261 & 4593 & 54,53 & 6383 $\pm$ 215 \\
+ Zinn (Sn)      & 1737 & 10,12 &  1928 $\pm$ 155 & 4594 & 56,06 & 5417 $\pm$  99 \\
+ Antimon (Sb)   & 1754 & 19,06 &  2297 $\pm$ 159 & 4593 & 45,54 & 5333 $\pm$ 203 \\
+ Tellur (Te)    & 1748 & 41,96 &  5342 $\pm$ 190 & 4591 & 34,96 & 5319 $\pm$ 201 \\
+ Iod (I)        & 1742 & 47,86 &  4327 $\pm$ 178 & 4591 & 55,77 & 5584 $\pm$ 156 \\
+\end{tabular}
+\caption{Absorption für Konversionslinie}
+\label{tab:konversion}
+\end{table*}
+
+\section{Zusammenfassung}
 
 \newpage
 \bibliographystyle{unsrtnat}

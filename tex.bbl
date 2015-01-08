@@ -57,9 +57,11 @@ R.~C. Alig, S.~Bloom, and C.~W. Struck.
 \newblock \doi{10.1103/PhysRevB.22.5565}.
 \newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevB.22.5565}.
 
-\bibitem[Berlin(2014)]{wiki}
-FU~Berlin.
-\newblock Ba2 - gamma-spektrometrie, 2014.
-\newblock URL \url{https://wiki.physik.fu-berlin.de/fp/}.
+\bibitem[Kohlrausch(1986)]{kohlrausch}
+F.~Kohlrausch.
+\newblock \emph{Praktische Physik. Zum Gebrauch für Unterricht, Forschung und
+  Technik. Band 3: Tabellen und Diagramme.}
+\newblock Teubner Stuttgart., 1986.
+\newblock ISBN 3519130009.
 
 \end{thebibliography}

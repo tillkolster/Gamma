@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/W32TeX) (format=pdflatex 2013.6.22)  6 JAN 2015 13:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/W32TeX) (format=pdflatex 2013.6.22)  8 JAN 2015 18:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -552,17 +552,16 @@ File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 (c:/texlive/2013/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2013/05/16 v3.9f The Babel package
 
-(c:/texlive/2013/texmf-dist/tex/generic/babel-english/english.ldf
-Language: english 2012/08/20 v3.3p English support from the babel system
+(c:/texlive/2013/texmf-dist/tex/generic/babel-german/ngermanb.ldf
+Language: ngermanb 2008/07/06 v2.6n new German support from the babel system
 
 (c:/texlive/2013/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2013/05/16 v3.9f Babel common definitions
 \babel@savecnt=\count91
 \U@D=\dimen104
 )
-\l@canadian = a dialect from \language\l@american 
-\l@australian = a dialect from \language\l@british 
-\l@newzealand = a dialect from \language\l@british 
+\l@naustrian = a dialect from \language\l@ngerman 
+Package babel Info: Making " an active character on input line 92.
 ))
 (c:/texlive/2013/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
@@ -1831,7 +1830,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
-Package csquotes Info: Redefining alias 'default' -> 'english'.
+Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
  (./tex.aux)
 \openout1 = `tex.aux'.
 
@@ -1919,12 +1918,12 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2013/03/11 v2.5q siunitx: Abbreviated units
 )
 babelbib: Use citation-dependent languages in bibliography
-babelbib: Set bibliography fall-back language to english
-(c:/texlive/2013/texmf-dist/tex/latex/babelbib/english.bdf
-File: english.bdf 2012/01/03 v1.31 babelbib: multilingual bibliographies (HH)
+babelbib: Set bibliography fall-back language to ngerman
+(c:/texlive/2013/texmf-dist/tex/latex/babelbib/german.bdf
+File: german.bdf 2012/01/03 v1.31 babelbib: multilingual bibliographies (HH)
 
-babelbib extension \bibsenglish added to \extrasenglish
-babelbib extension \btxifchangecaseon added to \extrasenglish
+babelbib extension \bibsngerman added to \extrasngerman
+babelbib extension \btxifchangecaseoff added to \extrasngerman
 )
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
@@ -2033,6 +2032,14 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 12.0pt on input line 120.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 12.0pt on input line 132.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 136.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 136.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 136.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 136.
  [1
 
 
@@ -2054,35 +2061,59 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 139.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 139.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 139.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 139.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 141.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 141.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 141.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 147.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 147.
 
-Underfull \hbox (badness 4108) in paragraph at lines 153--157
-\T1/LinuxLibertineT-TLF/m/n/10 (+20) Beim $\OML/cmm/m/it/10 $\T1/LinuxLibertin
-eT-TLF/m/n/10 (+20) -Zerfall ver-ringert das Atom seine Kern-
+Underfull \hbox (badness 1472) in paragraph at lines 160--163
+\T1/LinuxLibertineT-TLF/m/n/10 (+20) ($\OML/cmm/m/it/10 ^^L[]$\T1/LinuxLibertin
+eT-TLF/m/n/10 (+20) ) und Po-sitro-nen ($\OML/cmm/m/it/10 ^^L[]$\T1/LinuxLibert
+ineT-TLF/m/n/10 (+20) ) durch einen Atom-kern.
  []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 7.0pt on input line 172.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 5.0pt on input line 172.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 180.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 180.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 199.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 199.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 199.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 199.
 [2
 
-] <images/kante.png, id=87, 541.02126pt x 409.53pt>
+] <images/kante.png, id=103, 541.02126pt x 409.53pt>
 File: images/kante.png Graphic file (type png)
  <use images/kante.png>
 Package pdftex.def Info: images/kante.png used on input line 202.
 (pdftex.def)             Requested size: 182.09486pt x 137.8386pt.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 203.
-
-Underfull \hbox (badness 1033) in paragraph at lines 230--231
-[]\T1/LinuxLibertineT-TLF/m/n/10 (+20) Der Comp-ton-ef-fekt stellt sich somit a
-ls beson-ders
- []
-
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 210.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 210.
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
  input line 237.
+
 (c:/texlive/2013/texmf-dist/tex/latex/libertine/ts1linuxlibertinet-tlf.fd
 File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
@@ -2093,27 +2124,38 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `LinuxLibertineT-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 247.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 247.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 266.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 266.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 266.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 266.
 
 [3 <./images/kante.png>]
-Underfull \hbox (badness 1783) in paragraph at lines 267--268
-\T1/LinuxLibertineT-TLF/m/n/10 (+20) tonenen-ergien zum do-minieren-den Ef-fekt
- und ihr
- []
-
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 274.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 274.
 
 Underfull \hbox (badness 10000) in paragraph at lines 289--291
-[]\T1/LinuxLibertineT-TLF/m/n/10 (+20) Aufgrund der ver-schiede-nen $\OML/cmm/m
-/it/10 Z$\T1/LinuxLibertineT-TLF/m/n/10 (+20) - und $\OML/cmm/m/it/10 E[]$\T1/L
-inuxLibertineT-TLF/m/n/10 (+20) -
+[]\T1/LinuxLibertineT-TLF/m/n/10 (+20) Aufgrund der ver-schie-de-nen $\OML/cmm/
+m/it/10 Z$\T1/LinuxLibertineT-TLF/m/n/10 (+20) - und $\OML/cmm/m/it/10 E[]$\T1/
+LinuxLibertineT-TLF/m/n/10 (+20) -
  []
 
 
-Underfull \hbox (badness 5771) in paragraph at lines 289--291
-\T1/LinuxLibertineT-TLF/m/n/10 (+20) Abhängigkeiten, bi-etet sich die in Ab-bil
+Underfull \hbox (badness 6510) in paragraph at lines 289--291
+\T1/LinuxLibertineT-TLF/m/n/10 (+20) Abhängigkeiten, bie-tet sich die in Ab-bil
 -dung [][]2[][]
  []
 
-<images/absorption.pdf, id=110, 160.22871pt x 230.4963pt>
+<images/absorption.pdf, id=126, 160.22871pt x 230.4963pt>
 File: images/absorption.pdf Graphic file (type pdf)
 
 <use images/absorption.pdf>
@@ -2123,14 +2165,97 @@ Package pdftex.def Info: images/absorption.pdf used on input line 294.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 301.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 301.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 311.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 311.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 321.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 321.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 321.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 321.
 [4 <./images/absorption.pdf>]
-<images/aufbau.pdf, id=134, 425.8924pt x 113.42375pt>
-File: images/aufbau.pdf Graphic file (type pdf)
- <use images/aufbau.pdf>
-Package pdftex.def Info: images/aufbau.pdf used on input line 336.
-(pdftex.def)             Requested size: 364.19667pt x 96.9956pt.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 330.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 330.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 367.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 367.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 369.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 369.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 395.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 395.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 395.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 395.
+ [5]
+Overfull \hbox (2.1902pt too wide) in paragraph at lines 418--419
+ [][] 
+ []
 
-(./tex.bbl
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 428.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 428.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 7.0pt on input line 442.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 5.0pt on input line 442.
+
+LaTeX Warning: Reference `fig:kalib_NaI' on page 6 undefined on input line 446.
+
+
+PGFPlots: reading {data/Kal_NaI.txt}
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--507
+[][]\T1/LinuxBiolinumT-TLF/b/n/10 Abbildung 4: |\T1/LinuxBiolinumT-TLF/m/n/10 (
++20) Ka-li-bra-ti-ons-ge-ra-de für den NaI-
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+PGFPlots: reading {data/Kal_Ge.txt}
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 569.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 569.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 569.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 569.
+[6]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 570.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 570.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 623.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 623.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 627.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 627.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 645.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 645.
+ (./tex.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 11.
 LaTeX Font Info:    Try loading font information for T1+fvm on input line 26.
@@ -2151,7 +2276,8 @@ itt
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--27
-\T1/LinuxLibertineT-TLF/m/n/10 (+20) als funk-tion der pho-tonenen-ergie, May
+\T1/LinuxLibertineT-TLF/m/n/10 (+20) als funk-ti-on der pho-to-nen-ener-gie, Ma
+y
  []
 
 
@@ -2160,42 +2286,54 @@ Underfull \hbox (badness 4403) in paragraph at lines 23--27
  de . wikipedia . org / wiki /
  []
 
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 53.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 53.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 53.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 53.
+[7])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 651.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 651.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 651.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 651.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 651.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 651.
+ [8
 
-Underfull \hbox (badness 1701) in paragraph at lines 40--44
-\T1/LinuxLibertineT-TLF/m/n/10 (+20) Teub-ner Stu-di-en-bücher Physik. B. G. Te
-ub-ner,
- []
-
-
-Underfull \hbox (badness 2635) in paragraph at lines 47--52
-[]\T1/LinuxLibertineT-TLF/m/n/10 (+20) R. Nico-letti, M. Ober-lad-stät-ter, and
- F. König.
- []
-
-
-Underfull \hbox (badness 2409) in paragraph at lines 47--52
-\T1/LinuxLibertineT-TLF/m/it/10 (+20) Messtech-nik und In-stru-men-tierung in d
-er Nuk-
- []
-
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 350.
- [5] [6 <./images/aufbau.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 350.
- (./tex.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 350.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 350.
+]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 651.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 651.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 651.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 651.
+ [9] (./tex.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 651.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 651.
 Package rerunfilecheck Info: File `tex.out' has not changed.
-(rerunfilecheck)             Checksum: 2D6D02C2A414EB49C50840108479683D;814.
+(rerunfilecheck)             Checksum: 108238CEAA6C224F4A178FEE661BB3DB;1141.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 39648 strings out of 493315
- 848910 string characters out of 6141455
- 965419 words of memory out of 5000000
- 42123 multiletter control sequences out of 15000+600000
- 102309 words of font info for 186 fonts, out of 8000000 for 9000
+ 40359 strings out of 493315
+ 867533 string characters out of 6141455
+ 1015699 words of memory out of 5000000
+ 42793 multiletter control sequences out of 15000+600000
+ 114519 words of font info for 201 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 74i,11n,100p,851b,834s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 74i,14n,100p,851b,2410s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2013/texm
 f-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{c:/texlive/2013/texmf-dist/fo
 nts/enc/dvips/libertine/lbtn_25tcsq.enc}{c:/texlive/2013/texmf-dist/fonts/enc/d
@@ -2214,10 +2352,10 @@ c/amsfonts/cm/cmr5.pfb><c:/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr7.pfb><c:/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb><c:/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/tex
 live/2013/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on tex.pdf (6 pages, 1441667 bytes).
+Output written on tex.pdf (9 pages, 1430275 bytes).
 PDF statistics:
- 365 PDF objects out of 1000 (max. 8388607)
- 284 compressed objects within 3 object streams
- 44 named destinations out of 1000 (max. 500000)
- 35460 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 277 PDF objects out of 1000 (max. 8388607)
+ 238 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 37535 words of extra memory for PDF output out of 42996 (max. 10000000)
 

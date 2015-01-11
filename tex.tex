@@ -35,11 +35,15 @@
 \usepackage{multirow}
 \usepackage{rotating}
 \usepackage{url}
-
-\usepackage{tikz}
 \usepackage{float}
+\usepackage{tikz}
+%\usetikzlibrary{external}
+%\tikzexternalize
+%\tikzsetexternalprefix{figs/}
+
 \usepackage{pgfplots}
-%\pgfplotsset{compat=1.8}
+\pgfplotsset{compat=1.8}
+\usepackage{placeins}
 \usepackage{caption}
 \usepackage{graphicx}
 \usepackage{subcaption} %für subfigures
@@ -278,12 +282,14 @@ werden:
 
 \begin{align}
 I(s) &= I_0 e^{- \mu s},
+\label{eq:abs}
 \end{align}
 wobei $I$ die Intensität in Abhängigkeit der durchquerten Strecke $s$ ist und $\mu$ der Absorptionskoeffizient. Dieser ist Abhängig von der Atomdichte des Absorbers $n$ 
 in Anzahl pro Volumen und dem totalen Wirkungsquerschnitt \cite{marmier}:
 
 \begin{align}
 \mu &= n \cdot \sigma_{tot} = n \cdot ( \sigma_{Ph} + \sigma_C + \sigma_A)
+\label{eq:sigma}
 \end{align}
 
 Aufgrund der verschiedenen $Z$- und $E_{\gamma}$-Abhängigkeiten, bietet sich die in Abbildung \ref{fig:absorption_2} gezeigte Abhähngigkeit des Absorptionskoeffizienten 
@@ -346,7 +352,7 @@ Im folgenden wurde eine stärkere Co-60 Probe gewählt und in einen als Kollimat
 wurden nun ca 3 mm dicke Platten aus Blei, Kupfer und Aluminium gebracht und Messungen mit verschiedenen Plattenanzahlen bzw Schichticken 
 durchgeführt, um den Massenschwächungskoeffizienten der verschiedenen Materialien bestimmen zu können. Dabei wurde die Messzeit so 
 eingestellt, dass selbst bei stärkster Abschirmung noch ein deutlicher Peak zu sehen war. Aufgenommen wurden je die Intensität der 
-Peaks als Funktion der Schichtdicke. Dabei wurde vorallem darauf geachtet, dass die Platten möglichst senkrecht zum Strahlengang stehen 
+Peaks als Funktion der Schichtdicke. Dabei wurde vor allem darauf geachtet, dass die Platten möglichst senkrecht zum Strahlengang stehen 
 und somit die Schichtdicke immer vergleichbar ist. Es wurde immer zuerst mit maximaler Materialstärke gemessen und dann Platten 
 abgenommen, da so die Platten besser stehen und der Effekt bei größerer Plattenstärke größer ist. 
 
@@ -425,23 +431,11 @@ herbeiführt. Dadurch wird die Dämpfungskonstante des Prozesses verändert, was
 abläuft. So wird die Zeit minimiert, bis der Schwinger oder Oszillator, in diesem Fall der Detektor, wieder zur Ruhe kommt. Dies minimiert die 
 Totzeit und so können Ereignisse die dichter aufeinander folgen gemessen werden.
 
-\subsection{Kalibrierung des NaI-Detektors}
+\subsection{Kalibrierung der Detektoren}
 
 Um den Szintillationsdetektor zu kalibrieren bzw. zu wissen welcher Kanal des Vielkanalanalysators welcher Energie entspricht, wurden bei gleicher 
-Einstellung des Hauptverstärkers Zerfälle verschiedener Energien gemessen. Die Messwerte sind in Tabelle \ref{tab:kalib_NaI} aufgeführt. 
+Einstellung des Hauptverstärkers Zerfälle verschiedener Energien gemessen. Die Messwerte sind in Tabelle \ref{tab:kalib_NaI} im Anhang aufgeführt. 
 
-\begin{table*}[t]
- \begin{tabular}{cccccccc}
-Element & Energie & Channel & Fehler & FWHM (PC) & FWHM (Mensch) & Net Area \\
-\hline
-Cobalt 60  & 1173,208 & 5895 & 42 & 30,36 & 330 & 21353 $\pm$ 1520 \\
-Cobalt 60  & 1332,466 & 6705 & 21 & 147,24 & 300 & 14570 $\pm$ 1217 \\
-Cäsium 137 &  661,638 & 3388 & 14 & 202,43 & 250 & 25487 $\pm$ 582 \\
-Natrium 22 & 1274,511 & 6396 & 35 & 6,06 & 400 & 16739 $\pm$ 718 \\
- \end{tabular}
-\caption{Messwerte zur Kalibrierung des Vielkanalanalysators für den NaI-Detektor, Messzeit je 120 $\si{\second}$}
-\label{tab:kalib_NaI}
-\end{table*}
 
 In Abbildung \ref{fig:kalib_NaI} sind alle für die Kalibrierung aufgenommen Daten zu sehen. Mithilfe von \cite{kohlrausch} konnten den Peaks die in Tabelle 
 \ref{tab:kalib_NaI} ersichtlichen Energien zugeordnet werden. 
@@ -481,7 +475,7 @@ So wurde die folgenden Kalibrationsgerade gefunden:
 \end{align}
 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[
@@ -508,27 +502,10 @@ table [ x index = {0},y index = {1}, x error index = {2} ] {data/Kal_NaI.txt};
 \label{fig:Kalibrationsgerade_NaI}
 \end{figure}
 
-Hier fehlt noch Tabelle der Energien und Zuordnung und so was sie gesagt hat!
-
 Die selbe Kalibrierung wurde für den Germanium-Detektor durchgeführt. Allerdings konnten hier aufgrund der höheren Sensitivität mehr Elemente zur Eichung benutzt 
 werden. In Tabelle \ref{tab:Kalib_Ge} sind alle Energien und Kanäle aufgeführt, die Referenzwerte wieder aus \cite{kohlrausch}. Da für die Cobalt-Probe nur eine 
 Langzeitmessung durchgeführt wurde, wird auf eine Darstellung aller Spektren in einer Abbildung verzichtet. 
 
-\begin{table*}[t]
- \begin{tabular}{cccccccc}
-Element & Energie & Channel & Fehler & FWHM (PC) & FWHM (Mensch) & Net Area \\
-\hline
-Cobalt 60    & 1173,208 & 6377 & 7 & 13,40 & 28 & 62965 $\pm$ 486 \\
-Cobalt 60    & 1332,466 & 7241 & 7 & 14,25 & 28 & 54430 $\pm$ 277 \\
-Cäsium 137   &  661,638 & 3599 & 7 & 10,10 & 14 &  3189 $\pm$  61 \\
-Natrium 22   & 1274,511 & 6925 & 7 & 11,44 & 14 &  2593 $\pm$  65 \\
-Amercium 241 &   59,537 &  323 & 7 &  7,38 & 14 & 90468 $\pm$ 382 \\
-Amercium 241 &   26,345 &   97 & 7 &  8,98 & 14 & 26518 $\pm$ 256 \\
-Barium 133   &   80,998 &  439 & 7 &  7,54 & 14 &  7979 $\pm$ 196
-\end{tabular}
-\caption{Messwerte zur Kalibrierung des Vielkanalanalysators für den Germaniumdetektor, Messzeit je 180 $\si{\second}$}
-\label{tab:Kalib_Ge}
-\end{table*}
 
 Wieder wurde mit einer linearen Regression eine Kalibrationsgerade gefunden werden. Ebenfalls wurde das Programm Mathematica 10 benutzt. 
 Die Parameter lauten wie folgend:
@@ -538,7 +515,7 @@ Die Parameter lauten wie folgend:
 \end{align}
 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[
@@ -565,15 +542,227 @@ table [ x index = {0},y index = {1}, x error index = {2} ] {data/Kal_Ge.txt};
 \label{fig:Kalibrationsgerade_Ge}
 \end{figure}
 
-Hier fehlt noch Tabelle der Energien und Zuordnung und so was sie gesagt hat!
+Wie in Tabelle \ref{tab:kalib_fertig} zu sehen, ist die Kalibrierung gut, alle Werte für den Szintillationsdetektor sind gleich den Referenzwerten aus 
+\cite{kohlrausch}. Für den Germanium Halbleiterdetektor sind fast alle Werte gleich den Literaturwerten, die drei energieärmsten Linien 
+(Americium $60 \si{\kilo \electronvolt}$, Americium $26 \si{\kilo \electronvolt}$ und Barium $81 \si{\kilo \electronvolt}$) sind verträglich. Die Kalibrierung 
+kann also ohne große Probleme verwendet werden, besonders im energiereichen Bereich stimmt sie sehr gut. Die Fehler wurden mit Gaußscher Fehlerfortpflanzung 
+errechnet, wobei Eingangsfehler aus der Regressionsgeraden sowie aus den Messunsicherheiten stammen. Da das verwendete Messprogramm für die Full Width at 
+Half Maximum (FWHM) für den Szintillationsdetektor teilweise offensichtlich falsche Werte lieferte, wurden hier von Hand bestimmte Schätzwerte benutzt. 
+Die Messunsicherheit des Maximums der jeweiligen Gauss-Peaks wurden ebenfalls von Hand bestimmt: Dabei wurde der Unterschied des selbst bestimmten Maximums 
+zum vom Programm bestimmten Maximum gewählt. 
+
+
+\begin{table*}[t]
+\centering
+\begin{tabular}{cccccc}
+Kanal & Energie (\cite{kohlrausch})/$\si{\kilo \electronvolt}$ & Energie /$\si{\kilo \electronvolt}$&$\Delta$ E /$\si{\kilo \electronvolt}$& FWHM 
+/$\si{\kilo \electronvolt}$& $\Delta$ FWHM /$\si{\kilo \electronvolt}$\\
+\hline
+5895 & 1173,2 & 1170 & 10 & 50,68 & 0,87\\
+6705 & 1332,5 & 1334,2 & 7,2 & 40,54 & 0,70\\
+3388 & 661,6 & 661,8 & 5,1 & 50,66 & 0,87\\
+6396 & 1274,5 & 1271,6 & 9,1 & 81,1 & 1,39\\
+\hline
+6377 & 1173,2 & 1175,9 & 4,2 & 2,464 & 0,035\\
+7241 & 1332,5 & 1334,8 & 4,5 & 2,253 & 0,032\\
+3599 & 664,6 & 665,1   & 3,2 & 1,857 & 0,026\\
+6925 & 1274,5 & 1276,7 & 4,4 & 2,104 & 0,030\\
+323 & 59,6 & 62,6      & 2,7 & 1,357 & 0,019\\
+97 & 26,3 & 21,0       & 2,7 & 1,651 & 0,024\\
+439 & 80,998 & 83,9    & 2,7 & 1,387 & 0,020
+\end{tabular}
+\caption{Vergleich der Literaturwerte der aufgenommenen Gammaenergien und der mit der Kalibrierung errechneten Werte für den NaI-Detektor (oben) und den Ge-Detektor 
+(unten)}
+\label{tab:kalib_fertig}
+\end{table*}
+
+Mithilfe dieser Eichung kann ebenfalls die Energie des in Abbildung \ref{fig:kalib_NaI} auffälig hervorragenden Peaks um Kanal Nummer 2976 auf ca. 
+$518 \si{\kilo \electronvolt}$ bestimmt werden, was in etwa der Paarbildungsenergie entspricht. Da aber im Weiteren ein komplettes Spektrum mit besserer Statistik 
+analysiert wird, wird hier auf weitere Auswertung des Spektrums des NaI-Detektors verzichtet. 
+
+Wie man an den FWHM sehen kann, sind die Lebenszeiten der Zustände im NaI-Detektor signifikant länger als die im Ge-Detektor. Dies deckt sich mit den Werten aus 
+Tabelle \ref{tab:zeiten}: Die Anstiegszeit im Halbleiterdetektor sind bedeutend kürzer (ca $ 70 \%$) als die im Szintillationsdetektor.  Das deutet auf eine 
+längere Lebenszeit und damit eine größere Halbwertsbreite hin und erklärt die deutlichen Unterschiede in den FWHM der beiden Detektoren. 
 
 \subsection{Bestimmung des Massenabschwächungskoeffizienten}
 
-Für die Cobalt 60 1332,466 kEV Linie. Zeit: 180 s
+Im folgenden wurden die Massenschwächungskoeffizienten für Blei, Aluminium und Kupfer mithilfe der $1332 \si{\kilo \electronvolt}$-Cobalt-60-Linie bestimmt. Jede Messung 
+wurde $180 \si{\second}$ durchgeführt, die Messwerte finden sich in den Tabellen \ref{tab:abs_blei}, \ref{tab:abs_alu} und \ref{tab:abs_kupfer} im Anhang. 
+In Abbildung \ref{fig:absorption_alle} sind die Werte in einem halb-logarithmischen Plot zu sehen. Mit Formel \ref{eq:abs} kann der Absorptionskoeffizient $\mu$ 
+bestimmt werden: 
+\begin{align}
+- \mu \cdot s &= \ln{\left( \frac{I(s)}{I_0} \right )} 
+\end{align}
+Da jedoch vergessen wurde, eine Nullmessung ohne Absorber durchzuführen, ist $I_0$ nicht bekannt. Mit dem Programm Mathematica 10 wird dennoch ein exponentieller 
+Fit durchgeführt, dieser hat jedoch aufgrund der fehlenden Messung eine höhere Ungenauigkeit. 
+
+
+\begin{figure}[h!]
+\begin{center}
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+		width=.45\textwidth,
+		ymin= 20000,
+		ymax= 70000,
+		xmin = 0,
+		xmax = 25,
+		xlabel={Materialdicke/$\si{\milli \meter}$},
+		ylabel={Anzahl detektierter Zerfälle},
+		]
+\addplot[
+   only marks, 
+   color = blue,
+   error bars/.cd,
+   x dir=both,
+   x explicit,
+   y dir=both, 
+   y explicit,
+   ]
+table [ x index = {0}, x error index = {1}, y index = {2}, y error index = {3}] {data/Abs_blei.txt};
+\addplot[
+   only marks, 
+   color = red,
+   error bars/.cd,
+   x dir=both,
+   x explicit,
+   y dir=both, 
+   y explicit,
+   ]
+table [ x index = {0}, x error index = {1}, y index = {2}, y error index = {3}] {data/Abs_alu.txt};
+\addplot[
+   only marks, 
+   color = green,
+   error bars/.cd,
+   x dir=both,
+   x explicit,
+   y dir=both, 
+   y explicit,
+   ]
+table [ x index = {0}, x error index = {1}, y index = {2}, y error index = {3}] {data/Abs_kupfer.txt};
+\addplot[domain=0:25] {70492 * exp(-0.0564*x)}; 
+\addplot[domain=0:25] {73251 * exp(-0.0161*x)}; 
+\addplot[domain=0:25] {76816 * exp(-0.0493*x)}; 
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{center} 
+\caption{Zählrate über Dicke des Absorbers, Daten aus \ref{tab:abs_blei} (blau, Blei), \ref{tab:abs_alu} (rot, Aluminium) und \ref{tab:abs_kupfer} (grün, Kupfer), 
+y-Achse logarithmisch mit eingepassten Fits}
+\label{fig:absorption_alle}
+\end{figure}
+
+Die mit Mathematica gefundenen Fits haben die in Tabelle \ref{tab:abs_parameter} stehenden Parameter. 
+\begin{table}
+\begin{tabular}{ccc}
+Material & $I_0$ & $\mu$/$\nicefrac{1}{\si{\milli \meter}}$ \\
+\hline 
+Blei & 70261 $ \pm$ 1976 & 0,0564 $\pm$ 0,0026 \\
+Aluminium & 73251 $\pm$ 4155 & 0,0161 $\pm$ 0,0041 \\
+Kupfer & 75225 $\pm$ 5096 & 0,0472 $\pm$ 0,0044 \\
+Kupfer & 76816 $\pm$ 967 & 0,0493 $\pm$ 0,0009
+\end{tabular}
+\caption{Parameter der exponentiellen Fits für die Bestimmung der Absorptionskoeffizienten}
+\label{tab:abs_parameter}
+\end{table}
+
+Wird für Kupfer der Wert bei $17,5 \si{\milli \meter}$ und $15 \si{\milli \meter}$ nicht berücksichtigt, ergibt sich das in der Tabelle als viertes stehende Parameter-Set, 
+welches einen deutlich kleineren Fehler zeigt und die anderen vier Punkte besser trifft. 
+Die Werte für $I_0$ sind für die ersten drei Fits gleich. Somit scheint das nicht-aufnehmen dieses Wertes keinen großen Einfluss zu haben. Der alternativen 
+Kupfer-Fit liegt allerdings außerhalb des einfachen Fehlerintervalls des Blei-Fits. Da hier aber die Berechnung von $\mu$ im Vordergrund steht, wird diesem Fakt 
+keine weitere Bedeutung beigemessen. 
+
+Um nun aus dem Absorptionskoeffizienten mit Formel \ref{eq:sigma} den totalen Wirkungsquerschnitt zu berechnen, wird die Atomdichte gebraucht. Diese errechnet sich 
+folgendermaßen:
+\begin{align}
+n &= \frac{N}{V} = \frac{N \cdot \rho}{m} = \frac{N_A \cdot \rho}{m_T},
+\end{align}
+mit $n$ der Teilchendichte in $\nicefrac{1}{\si{\centi \meter}^3}$, $N$ der Teilchenanzahl, dem Volumen $V$, der Dichte $\rho$, der Avogadrokonstanten $N_A$ und der 
+Teilchenmasse $m_T$. Die so errechneten Werte für den Totalen Wirkungsquerschnitt sind in Tabelle \ref{tab:querschnitte} einsehbar. Die Werte für die 
+Teilchenmasse aus \cite{ciaaw}, die der Dichten aus \cite{greenwood}. 
+
+\begin{table}[h]
+\begin{tabular}{ccc}
+Element & $n$/$\frac{1}{\si{\centi \meter}^3}$ & $\sigma_{tot}$/$\frac{1}{\si{\meter}^2}$ \\
+\hline
+Pb & $3,2965 \cdot 10^{22}$      & $(17,11 \pm 0,79) \cdot 10^{-28}$\\
+Al & $2,5314 \cdot 10^{23}$ & $(0,63  \pm 0,16) \cdot 10^{-28}$\\
+Cu & $8,4533 \cdot 10^{22}$    & $(5,83  \pm 0,11) \cdot 10^{-28}$\\
+\end{tabular}
+\caption{Wirkungsquerschnitte für Blei, Aluminium und Kupfer}
+\label{tab:querschnitte}
+\end{table}
+
+Für die Wirkungsquerschnitte wurden keine Referenzwerte gefunden. Die Massenschwächungskoeffizienten $\sigma_m$ berechen sich mit $\nicefrac{\mu}{\rho}$. Die 
+hier errechneten Werte finden sich in Tabelle \ref{tab:massen}. Referenzwerte aus \cite{NIST}. Da die Referenzwerte nur für Energien von $1250 \si{\kilo \electronvolt}$ 
+und $1500 \si{\kilo \electronvolt}$ vorhanden sind, wurde, um einen Wert für die verwendete Cobalt-Linie zu bekommen, ein linearer Ausgleich zwischen diesen 
+Punkten durchgeführt. Da der Verlauf des Massenschwächungskoeffizienten in Abhängigkeit der Energie jedoch nicht exakt ist, sind die Referenzwerte auch nicht exakt!
+
+\begin{table}[h]
+\begin{tabular}{ccc}
+Element & $\sigma_m$ / $\frac{\si{\centi \meter}^2}{\si{\gram}}$ &  $\sigma_m$ / $\frac{\si{\centi \meter}^2}{\si{\gram}}$ \cite{NIST}  \\
+\hline 
+Pb & $0,0497 \pm 0,0023$    & $0,0061$ \\
+Al & $0,060 \pm 0,015$ & $0,0056$ \\
+Cu & $0,0552 \pm 0,0011$  & $0,0054$ \\
+\end{tabular}
+\caption{Massenschwächungskoeffizienten von Blei, Aluminium und Kupfer}
+\label{tab:massen}
+\end{table}
+
+Wie zu sehen, sind die Werte für Kupfer und Aluminium gleich den Referenzwerte, die für Blei nicht. Da jedoch wie schon erwähnt der Referenzwert errechnet werden musste, 
+und bei Blei der Verlauf am wenigsten linear ist, kann keine verbindliche Aussage über die Genauigkeit des Wertes getroffen werden. 
+
+\subsection{Analyse eines Spektrums}
+
+Über eine Zeitspanne von $4000 \si{\second}$ wurde ein Spektrum eines Cobalt-60-Strahlers aufgenommen, um Aussagen über auch weniger stark auftretende Effekte machen zu 
+können. 
+
+\subsection{Bestimmung der Konversionslinie}
+
+Zeit: 180 s.
 
 
 
-\begin{table}[b]
+\section{Zusammenfassung}
+
+\newpage
+\bibliographystyle{unsrtnat}
+\bibliography{gammabib}
+
+\FloatBarrier
+\begin{appendix}
+
+\begin{table*}[h]
+ \begin{tabular}{cccccccc}
+Element & Energie /$\si{\kilo \electronvolt}$& Channel & Fehler & FWHM (PC) & FWHM (Mensch) & Net Area \\
+\hline
+Cobalt 60  & 1173,208 & 5895 & 42 & 30,36 & 250 & 21353 $\pm$ 1520 \\
+Cobalt 60  & 1332,466 & 6705 & 21 & 147,24 & 200 & 14570 $\pm$ 1217 \\
+Cäsium 137 &  661,638 & 3388 & 14 & 202,43 & 250 & 25487 $\pm$ 582 \\
+Natrium 22 & 1274,511 & 6396 & 35 & 6,06 & 400 & 16739 $\pm$ 718 \\
+ \end{tabular}
+\caption{Messwerte zur Kalibrierung des Vielkanalanalysators für den NaI-Detektor, Messzeit je 120 $\si{\second}$}
+\label{tab:kalib_NaI}
+\end{table*}
+
+\begin{table*}[h]
+ \begin{tabular}{cccccccc}
+Element & Energie /$\si{\kilo \electronvolt}$& Channel & Fehler & FWHM (PC) & FWHM (Mensch) & Net Area \\
+\hline
+Cobalt 60    & 1173,208 & 6377 & 7 & 13,40 & 28 & 62965 $\pm$ 486 \\
+Cobalt 60    & 1332,466 & 7241 & 7 & 14,25 & 28 & 54430 $\pm$ 277 \\
+Cäsium 137   &  661,638 & 3599 & 7 & 10,10 & 14 &  3189 $\pm$  61 \\
+Natrium 22   & 1274,511 & 6925 & 7 & 11,44 & 14 &  2593 $\pm$  65 \\
+Amercium 241 &   59,537 &  323 & 7 &  7,38 & 14 & 90468 $\pm$ 382 \\
+Amercium 241 &   26,345 &   97 & 7 &  8,98 & 14 & 26518 $\pm$ 256 \\
+Barium 133   &   80,998 &  439 & 7 &  7,54 & 14 &  7979 $\pm$ 196
+\end{tabular}
+\caption{Messwerte zur Kalibrierung des Vielkanalanalysators für den Germaniumdetektor, Messzeit je 180 $\si{\second}$, Cobalt-Peaks aus 4000 $\si{\second}$ 
+Langzeitspektrum}
+\label{tab:Kalib_Ge}
+\end{table*}
+
+
+\begin{table}[h]
 \centering
 \begin{tabular}{cc}
  Dicke & Zählrate  \\
@@ -588,7 +777,7 @@ Für die Cobalt 60 1332,466 kEV Linie. Zeit: 180 s
 \label{tab:abs_blei}
 \end{table}
 
-\begin{table}[b]
+\begin{table}[h]
 \centering
 \begin{tabular}{cc}
  Dicke & Zählrate \\
@@ -604,7 +793,7 @@ Für die Cobalt 60 1332,466 kEV Linie. Zeit: 180 s
 \label{tab:abs_alu}
 \end{table}
 
-\begin{table}[b]
+\begin{table}[h]
 \centering
 \begin{tabular}{cc}
  Dicke & Zählrate \\
@@ -619,16 +808,9 @@ Für die Cobalt 60 1332,466 kEV Linie. Zeit: 180 s
 \caption{Absorption Kupfer}
 \label{tab:abs_kupfer}
 \end{table}
+\end{appendix}
 
-\subsection{Analyse eines Spektrums}
-
-Zeit: 4000 $\si{\second}$
-
-\subsection{Bestimmung der Konversionslinie}
-
-Zeit: 180 s.
-
-\begin{table*}[b]
+\begin{table*}[h]
 \begin{tabular}{ccccccc}
  Element & 30-keV-Linie & FWHM & Net Area & 80-keV-Linie & FWHM & Net Area \\
  \hline
@@ -642,11 +824,7 @@ Zeit: 180 s.
 \label{tab:konversion}
 \end{table*}
 
-\section{Zusammenfassung}
 
-\newpage
-\bibliographystyle{unsrtnat}
-\bibliography{gammabib}
 
 \end{document}
 

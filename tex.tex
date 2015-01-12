@@ -240,9 +240,9 @@ E_{\gamma}'(\phi) &= \frac{E_{\gamma}}{1 + \frac{E_{\gamma}}{m_e c^2} (1 - \cos 
 
 Bei Aufnahme eines Spektrums ergibt sich nun also ein kontinuierliches Spektrum für alle Winkel zwischen 0\textdegree und 180\textdegree. Danach folgt eine 
 scharfe Kante, die sogenannte Compton-Kante, die auftritt, weil nicht mehr Energie abgegeben werden kann, als bei einem Stoß von 180\textdegree. Die 
-korrespondierende Energie beträgt dann also 
+korrespondierende Energie, die im Detektor verbleibt, beträgt dann also 
 \begin{align}
-E_{\gamma}'(180^{\circ}) &= \frac{E_{\gamma}}{1 + \frac{2 E_{\gamma}}{m_e c^2}}
+E_{\gamma}'(180^{\circ}) &= \frac{2 \cdot E_{\gamma}^2}{m_e \cdot c^2 + 2 \cdot E_{\gamma}}
 \end{align}
 
 Zusätzlich sollte ein Maximum mit höherer Energie im Spektrum auftreten, da auch einige Photonen ohne Streuprozess durch das Material fliegen. Dieses Maximum wird 
@@ -714,7 +714,25 @@ und bei Blei der Verlauf am wenigsten linear ist, kann keine verbindliche Aussag
 \subsection{Analyse eines Spektrums}
 
 Über eine Zeitspanne von $4000 \si{\second}$ wurde ein Spektrum eines Cobalt-60-Strahlers aufgenommen, um Aussagen über auch weniger stark auftretende Effekte machen zu 
-können. 
+können. Um die aufgenommenen Werte einordnen zu können, müssen zuerst die theoretischen Werte für Compton-Kanten, Back-Scatter-Linien und Escape-Linien berechnet 
+werden. Diese hängen von den Energien der Photopeaks ab. Beim benutzten Cobalt-60 gibt es davon zwei, die $1332,466 \si{\kilo \electronvolt}$- und die 
+$1173,208 \si{\kilo \electronvolt}$-Linie. Die errechneten Werte sind in Tabelle \ref{tab:theo} aufgeführt. 
+
+\begin{table}
+\begin{tabular}{ccc}
+Photopeak & $1332,466 \si{\kilo \electronvolt}$ & $1173,208 \si{\kilo \electronvolt}$ \\
+ \hline 
+Compton-Kante & $1118,075 \si{\kilo \electronvolt}$ &  $963,400 \si{\kilo \electronvolt}$\\
+Back-Scatter-Linie &  $214,391 \si{\kilo \electronvolt}$ &  $209,808 \si{\kilo \electronvolt}$ \\
+Escape-Linie & $821,467 \si{\kilo \electronvolt}$ & $622,209 \si{\kilo \electronvolt}$ \\
+Double-Escape & $310,468 \si{\kilo \electronvolt}$ & $151,211 \si{\kilo \electronvolt}$
+\end{tabular}
+\caption{Errechnete theoretische Werte für beide Cobalt-60-Linien}
+\label{tab:theo}
+\end{table}
+
+Die Energie, die bei der Paarbildung an den Atomkern übergeht, wird aufgrund ihrer Größenordnung im $\si{\milli \electronvolt}$-Bereich bei der Berechnung der 
+theoretischen Werte nicht berücksichtigt. 
 
 \subsection{Bestimmung der Konversionslinie}
 

@@ -440,32 +440,32 @@ Einstellung des Hauptverstärkers Zerfälle verschiedener Energien gemessen. Die
 In Abbildung \ref{fig:kalib_NaI} sind alle für die Kalibrierung aufgenommen Daten zu sehen. Mithilfe von \cite{kohlrausch} konnten den Peaks die in Tabelle 
 \ref{tab:kalib_NaI} ersichtlichen Energien zugeordnet werden. 
 
-%\begin{figure*}[t]
-%\centering
-%\begin{tikzpicture}
-%	\begin{axis}[
-%	width=.8\textwidth,
-%	height=.4\textwidth,
-%	ymin = 0,
-%	ymax = 450,
-%	xmin = 0,
-%	xmax = 8200,
-%	xlabel={Kanal $\#$},
-%	ylabel={Anzahl Ereignisse},
-%	]
-%	\addplot[color = red, thin] table {data/Kal_NaI_Co.txt};
-%	\addplot[color = green, thin] table {data/Kal_NaI_Na.txt};
-%	\addplot[color = blue, thin] table {data/Kal_NaI_Cs.txt};
-%	\draw [color=black, line width=.01pt ] ({axis cs:5895,0}|-{rel axis cs:0,0}) -- ({axis cs:5895,0}|-{rel axis cs:0,1});
-%	\draw [color=black, line width=.01pt ] ({axis cs:6705,0}|-{rel axis cs:0,0}) -- ({axis cs:6705,0}|-{rel axis cs:0,1});
-%	\draw [color=black, line width=.01pt ] ({axis cs:3388,0}|-{rel axis cs:0,0}) -- ({axis cs:3388,0}|-{rel axis cs:0,1});
-%	\draw [color=black, line width=.01pt ] ({axis cs:6396,0}|-{rel axis cs:0,0}) -- ({axis cs:6396,0}|-{rel axis cs:0,1});
-%	\end{axis}
-%\end{tikzpicture}
-%\caption{Anzahl der Einfälle in Abhängigkeit vom Kanal für Cobal(rot), Cäsium(blau) und Natrium (grün) zur Kalibrierung des Analysators. Die schwarzen Linien 
-%geben die Positionen der mit dem Messprogramm gefundenen und mit \cite{kohlrausch} identifizierten Peaks an}
-%\label{fig:kalib_NaI}
-%\end{figure*}
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}
+	\begin{axis}[
+	width=.8\textwidth,
+	height=.4\textwidth,
+	ymin = 0,
+	ymax = 450,
+	xmin = 0,
+	xmax = 8200,
+	xlabel={Kanal $\#$},
+	ylabel={Anzahl Ereignisse},
+	]
+	\addplot[color = red, thin] table {data/Kal_NaI_Co.txt};
+	\addplot[color = green, thin] table {data/Kal_NaI_Na.txt};
+	\addplot[color = blue, thin] table {data/Kal_NaI_Cs.txt};
+	\draw [color=black, line width=.01pt ] ({axis cs:5895,0}|-{rel axis cs:0,0}) -- ({axis cs:5895,0}|-{rel axis cs:0,1});
+	\draw [color=black, line width=.01pt ] ({axis cs:6705,0}|-{rel axis cs:0,0}) -- ({axis cs:6705,0}|-{rel axis cs:0,1});
+	\draw [color=black, line width=.01pt ] ({axis cs:3388,0}|-{rel axis cs:0,0}) -- ({axis cs:3388,0}|-{rel axis cs:0,1});
+	\draw [color=black, line width=.01pt ] ({axis cs:6396,0}|-{rel axis cs:0,0}) -- ({axis cs:6396,0}|-{rel axis cs:0,1});
+	\end{axis}
+\end{tikzpicture}
+\caption{Anzahl der Einfälle in Abhängigkeit vom Kanal für Cobal(rot), Cäsium(blau) und Natrium (grün) zur Kalibrierung des Analysators. Die schwarzen Linien 
+geben die Positionen der mit dem Messprogramm gefundenen und mit \cite{kohlrausch} identifizierten Peaks an}
+\label{fig:kalib_NaI}
+\end{figure*}
 
 Mithilfe einer linearen Regression konnte eine Kalibrationsgerade gefunden werden.Für diese Kalibrierung wurde das Programm Mathematica 10 benutzt. 
 So wurde die folgenden Kalibrationsgerade gefunden:
@@ -711,10 +711,31 @@ Cu & $0,0552 \pm 0,0011$  & $0,0054$ \\
 Wie zu sehen, sind die Werte für Kupfer und Aluminium gleich den Referenzwerte, die für Blei nicht. Da jedoch wie schon erwähnt der Referenzwert errechnet werden musste, 
 und bei Blei der Verlauf am wenigsten linear ist, kann keine verbindliche Aussage über die Genauigkeit des Wertes getroffen werden. 
 
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}
+	\begin{axis}[
+	width=.8\textwidth,
+	height=.4\textwidth,
+	ymin = 0,
+	ymax = 5500,
+	xmin = 0,
+	xmax = 8200,
+	xlabel={Kanal $\#$},
+	ylabel={Anzahl Ereignisse},
+	]
+	\addplot[color = red, thin] table {data/Lang_Ge.txt};
+	\end{axis}
+\end{tikzpicture}
+\caption{Anzahl der Einfälle in Abhängigkeit vom Kanal für das über $4000 \si{\second}$ lang mit dem Ge-Detektor aufgenommene Spektrum}
+\label{fig:langzeit_Ge}
+\end{figure*}
+
 \subsection{Analyse eines Spektrums}
 
 Über eine Zeitspanne von $4000 \si{\second}$ wurde ein Spektrum eines Cobalt-60-Strahlers aufgenommen, um Aussagen über auch weniger stark auftretende Effekte machen zu 
-können. Um die aufgenommenen Werte einordnen zu können, müssen zuerst die theoretischen Werte für Compton-Kanten, Back-Scatter-Linien und Escape-Linien berechnet 
+können. Abbildung \ref{fig:langzeit_Ge} zeigt die aufgenommenen Daten. Um die aufgenommenen Werte einordnen zu können, müssen zuerst die theoretischen Werte für 
+Compton-Kanten, Back-Scatter-Linien und Escape-Linien berechnet 
 werden. Diese hängen von den Energien der Photopeaks ab. Beim benutzten Cobalt-60 gibt es davon zwei, die $1332,466 \si{\kilo \electronvolt}$- und die 
 $1173,208 \si{\kilo \electronvolt}$-Linie. Die errechneten Werte sind in Tabelle \ref{tab:theo} aufgeführt. 
 
@@ -732,7 +753,60 @@ Double-Escape & $310,468 \si{\kilo \electronvolt}$ & $151,211 \si{\kilo \electro
 \end{table}
 
 Die Energie, die bei der Paarbildung an den Atomkern übergeht, wird aufgrund ihrer Größenordnung im $\si{\milli \electronvolt}$-Bereich bei der Berechnung der 
-theoretischen Werte nicht berücksichtigt. 
+theoretischen Werte nicht berücksichtigt. Die Fits wurden mit OriginLab durchgeführt. Dies stellt für sechs der acht Werte kein Problem dar, da Gauss-Anpassungen 
+möglich sind. Diese werden gewählt, da der theoretische Lorentz-Peak durch die Reaktionszeit des Detektors leicht ausgeschmiert wird. Die Compton-Kanten 
+wurden mit einem exponentiellen Abfall gefittet. Tabelle \ref{tab:fits} sind die Daten aufgeführt. Als Fehler der Peaklage kann die Hälfte der FWHM benutzt werden, 
+da diese genau der statistischen Varianz $\sigma$ entspricht. Die Unsicherheit in der Lage der Compton-Kanten sowie des ersten Scheitelwerts werden auf zehn Kanäle 
+geschätzt. 
+
+\begin{table}
+\centering
+\begin{tabular}{ccc}
+Kanal & FWHM & Fläche \\
+\hline
+$7241$ & $15$ & $53676$ \\
+$6378$ & $13$ & $61856$ \\
+$6060$ & - & - \\
+$5221$ & - & - \\
+$2782$ & $16$ & $1001$ \\
+$1691$ & $9$  & $1434$ \\
+$1176$ & $93$ & $10637$ \\
+$ 821$ & $21$ & $1209$ 
+\end{tabular}
+\caption{Aus Langzeimessung mit OriginLab gefundene Werte für Scheitelwerte, sofern in Gauss-Form mit FWHM und Fläche}
+\label{tab:fits}
+\end{table}
+
+Mit der zuvor errechneten Kalibrierung kann nun den Kanälen eine Energie zugeordnet werden. Für einige theoretische Werte konnte kein Peak gefunden werden. 
+Alle Werte in Tabelle \ref{tab:ergebnis}. 
+
+\begin{table*}[h]
+\centering
+\begin{tabular}{cccc}
+Kanal & Energie/$\si{\kilo \electronvolt}$ & Theorie/$\si{\kilo \electronvolt}$ & Peak \\
+\hline 
+$7241 \pm 8$ & $1334,8 \pm 4,6 $ &$1332,466$ &Photopeak \\
+$6378 \pm 7$ & $1176,1 \pm 4,2 $ &$1173,208$ &Photopeak\\
+$6060 \pm10$ & $1117,6 \pm 4,3 $ &$1118,075$ &Compton-Kante\\
+$5221 \pm10$ & $ 963,3 \pm 4,0 $ &$ 963,400$ &Compton-Kante\\
+$  -  \pm -$ & $  -    \pm -   $ &$ 821,467$ &Escape-Peak\\
+$2782 \pm 8$ & $ 514,8 \pm 3,1 $ &$ 622,209$ &Escape-Peak\\
+$1691 \pm 5$ & $ 314,2 \pm 2,7 $ &$ 310,468$ &Double-Escape\\
+$1176 \pm47$ & $ 219,5 \pm 9,0 $ &$ 214,391$ &Backscatter\\
+$  -  \pm -$ & $  -    \pm -   $ &$ 209,808$ &Backscatter\\
+$ 821 \pm11$ & $ 154,2 \pm 3,1 $ &$ 151,211$ &Double-Escape
+\end{tabular}
+\caption{Analyse des mit dem Ge-Detektor aufgenommenen Langzeitspektrums, Theoretische Werte aus Tabelle \ref{tab:theo}}
+\label{tab:ergebnis}
+\end{table*}
+
+Für den energieärmeren Backscatter-Peak konnte aufgrund der begrenzten Auflösung des Detektors und der Nähe der beiden Backscatter-Peaks im Spektrum kein Wert gefunden 
+werden. Der Escape-Peak des energiereichen Photopeaks konnte ebenfalls nicht gefunden werden. Er geht im Rauschen des Compton-Kontinuums unter. 
+Wie aus Tabelle \ref{tab:ergebnis} ersichtlich, stimmen die gemessenen Energien mit den theoretischen besonders im oberen Teil des Spektrums überein. Dies wurde 
+nach der Ungenauigkeit der Eichung im unteren Bereich nicht erwartet: Hier sind die Abweichungen deutlich größer und die Werte nur verträglich mit den Referenzwerten, 
+so denn überhaupt Werte gefunden wurden. Der Escape-Peak der $1173 \si{\kilo \electronvolt}$-Linie ist nicht vereinbar mit seinem theoretischen Wert. Dies legt nahe, 
+dass der Peak falsch zugeordnet wurde. Wahrscheinlich sind beide Single-Escape-Peaks nicht gemessen worden und der aufgenommene Wert bei 
+$514 \si{\kilo \electronvolt}$ stellt ein Artefakt dar oder liegt einer Wechselwirkung zugrunde, die nicht berücksichtigt wurde. 
 
 \subsection{Bestimmung der Konversionslinie}
 
@@ -742,28 +816,39 @@ Zeit: 180 s.
 
 \section{Zusammenfassung}
 
+\onecolumn
 \newpage
+
 \bibliographystyle{unsrtnat}
 \bibliography{gammabib}
 
 \FloatBarrier
+
+\newpage
+
 \begin{appendix}
 
-\begin{table*}[h]
- \begin{tabular}{cccccccc}
+\begin{table}
+\begin{small}
+\centering
+\begin{tabular}{cccccccc}
 Element & Energie /$\si{\kilo \electronvolt}$& Channel & Fehler & FWHM (PC) & FWHM (Mensch) & Net Area \\
 \hline
 Cobalt 60  & 1173,208 & 5895 & 42 & 30,36 & 250 & 21353 $\pm$ 1520 \\
 Cobalt 60  & 1332,466 & 6705 & 21 & 147,24 & 200 & 14570 $\pm$ 1217 \\
 Cäsium 137 &  661,638 & 3388 & 14 & 202,43 & 250 & 25487 $\pm$ 582 \\
 Natrium 22 & 1274,511 & 6396 & 35 & 6,06 & 400 & 16739 $\pm$ 718 \\
- \end{tabular}
+\end{tabular}
 \caption{Messwerte zur Kalibrierung des Vielkanalanalysators für den NaI-Detektor, Messzeit je 120 $\si{\second}$}
 \label{tab:kalib_NaI}
-\end{table*}
 
-\begin{table*}[h]
- \begin{tabular}{cccccccc}
+\end{small}
+\end{table}
+
+\begin{table}
+\begin{small}
+\centering
+\begin{tabular}{cccccccc}
 Element & Energie /$\si{\kilo \electronvolt}$& Channel & Fehler & FWHM (PC) & FWHM (Mensch) & Net Area \\
 \hline
 Cobalt 60    & 1173,208 & 6377 & 7 & 13,40 & 28 & 62965 $\pm$ 486 \\
@@ -777,10 +862,14 @@ Barium 133   &   80,998 &  439 & 7 &  7,54 & 14 &  7979 $\pm$ 196
 \caption{Messwerte zur Kalibrierung des Vielkanalanalysators für den Germaniumdetektor, Messzeit je 180 $\si{\second}$, Cobalt-Peaks aus 4000 $\si{\second}$ 
 Langzeitspektrum}
 \label{tab:Kalib_Ge}
-\end{table*}
+\end{small}
+\end{table}
 
 
-\begin{table}[h]
+\begin{table}
+\begin{small}
+
+\begin{subtable}[b]{.3\textwidth}
 \centering
 \begin{tabular}{cc}
  Dicke & Zählrate  \\
@@ -790,12 +879,13 @@ Langzeitspektrum}
  10,50 $\pm$ 0,04 mm & 38582 $\pm$ 1826  \\
   8,00 $\pm$ 0,03 mm & 43599 $\pm$ 1990  \\
   6,00 $\pm$ 0,02 mm & 50994 $\pm$ 2050  \\
+   &  \\
 \end{tabular}
-\caption{Absorption Blei}
+\subcaption{Absorption Blei}
 \label{tab:abs_blei}
-\end{table}
-
-\begin{table}[h]
+\end{subtable}
+%
+\begin{subtable}[b]{.3\textwidth}
 \centering
 \begin{tabular}{cc}
  Dicke & Zählrate \\
@@ -807,11 +897,11 @@ Langzeitspektrum}
   9,00 $\pm$ 0,03 mm & 60228 $\pm$ 2357  \\
   6,00 $\pm$ 0,02 mm & 67514 $\pm$ 2283  \\
 \end{tabular}
-\caption{Absortion Alu}
+\subcaption{Absortion Alu}
 \label{tab:abs_alu}
-\end{table}
-
-\begin{table}[h]
+\end{subtable}
+%
+\begin{subtable}[b]{.3\textwidth}
 \centering
 \begin{tabular}{cc}
  Dicke & Zählrate \\
@@ -823,12 +913,17 @@ Langzeitspektrum}
  12,00 $\pm$ 0,04 mm & 42395 $\pm$ 1890  \\
   9,00 $\pm$ 0,03 mm & 49374 $\pm$ 1995  \\
 \end{tabular}
-\caption{Absorption Kupfer}
+\subcaption{Absorption Kupfer}
 \label{tab:abs_kupfer}
-\end{table}
-\end{appendix}
+\end{subtable}
 
-\begin{table*}[h]
+\end{small}
+\caption{Anzahl detektierter Zerfälle in Abhängigkeit der Absorberdicke verschiedener Materialien}
+\end{table}
+
+\begin{table}
+\begin{small}
+\centering
 \begin{tabular}{ccccccc}
  Element & 30-keV-Linie & FWHM & Net Area & 80-keV-Linie & FWHM & Net Area \\
  \hline
@@ -840,8 +935,11 @@ Langzeitspektrum}
 \end{tabular}
 \caption{Absorption für Konversionslinie}
 \label{tab:konversion}
-\end{table*}
+\end{small}
+\end{table}
 
+
+\end{appendix}
 
 
 \end{document}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{15}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -64,6 +64,11 @@ F.~Kohlrausch.
 \newblock Teubner Stuttgart., 1986.
 \newblock ISBN 3519130009.
 
+\bibitem[Davisson and Evans(1951)]{davisson}
+C.~M. Davisson and R.~D. Evans.
+\newblock Measurements of gamma-ray absortion coefficients.
+\newblock \emph{Phys. Rev. Letters}, 81:\penalty0 404--411, feb 1951.
+
 \bibitem[on~Isotopic~Abundances and Weights(2014)]{ciaaw}
 Commission on~Isotopic~Abundances and Atomic Weights.
 \newblock standard atomic weights, 2014.
@@ -79,5 +84,15 @@ N.N. Greenwood.
 National~Institute on~Standards and Technology.
 \newblock X-ray mass attenuation coefficients, 2014.
 \newblock URL \url{http://physics.nist.gov/PhysRefData/XrayMassCoef/tab3.html}.
+
+\bibitem[of~Washington Biomolecular Structure~Center(2015)]{washington}
+University of~Washington Biomolecular Structure~Center.
+\newblock X-ray absorption edges, 2015.
+\newblock URL \url{http://skuld.bmsc.washington.edu/scatter/AS_periodic.html/}.
+
+\bibitem[Page(2015)]{isotopes}
+The Isotopes Project~Home Page.
+\newblock Table of radioactive isotopes, 2015.
+\newblock URL \url{http://ie.lbl.gov/toi/nuclide.asp?iZA=560133/}.
 
 \end{thebibliography}
